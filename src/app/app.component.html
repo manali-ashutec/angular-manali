@@ -1,0 +1,34 @@
+<img
+  src="https://media.istockphoto.com/photos/red-abstract-iris-picture-id1302300754?b=1&k=20&m=1302300754&s=170667a&w=0&h=DR27bm9NQWAtrnHNhbpbWphy-hGYqrzP51Jxj2hhtR8="
+  width="100"
+  height="80"
+/>
+<img
+  src="https://media.istockphoto.com/photos/abstract-wavy-object-picture-id1198271727?b=1&k=20&m=1198271727&s=170667a&w=0&h=b626WM5c-lq9g_yGyD0vgufb4LQRX9UgYNWPaNUVses="
+  width="100"
+  height="80"
+/>
+<img
+  src="https://media.istockphoto.com/photos/colored-powder-explosion-on-white-background-picture-id1132442970?b=1&k=20&m=1132442970&s=170667a&w=0&h=qZU1t7UPVUZanRUaPIrTa0IJejHGrNQldpWTl_v92M0="
+  width="100"
+  height="80"
+/>
+<img
+  src="https://media.istockphoto.com/photos/abstract-wavy-object-picture-id1198271727?b=1&k=20&m=1198271727&s=170667a&w=0&h=b626WM5c-lq9g_yGyD0vgufb4LQRX9UgYNWPaNUVses="
+  width="100"
+  height="80"
+/>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+  <div>
+    <input type="number" formControlName="photo" />
+  </div>
+
+  <div>
+    <input type="number" formControlName="section" />
+  </div>
+
+  <button class="button" type="submit">ADD</button>
+</form>
+<app-first [first]="firstSection"></app-first>
+<app-second [second]="secondSection"></app-second>
+<app-third [third]="thirdSecion"></app-third>
