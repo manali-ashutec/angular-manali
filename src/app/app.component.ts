@@ -8,7 +8,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   contactForm;
-  firstSection;
   secondSection;
   thirdSecion;
   section = [];
@@ -35,18 +34,17 @@ export class AppComponent implements OnInit {
     },
     {
       id: 4,
-      src: 'https://media.istockphoto.com/photos/abstract-wavy-object-picture-id1198271727?b=1&k=20&m=1198271727&s=170667a&w=0&h=b626WM5c-lq9g_yGyD0vgufb4LQRX9UgYNWPaNUVses',
+      src: 'https://www.xda-developers.com/files/2021/12/1_pantone_collab_dark.jpg',
     },
   ];
 
   onSubmit(data): void {
-    // console.log(data);
+    console.log(data);
     const findId = this.images.find((data1) => data1.id === data.photo);
     console.log(findId);
     if (data.section === 1) {
-      this.firstSection = findId;
       this.section.push(findId);
-      console.log(this.section);
+      this.images.splice(data.photo, 1);
     } else if (data.section === 2) {
       this.secondSection = findId;
     } else if (data.section === 3) {

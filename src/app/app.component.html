@@ -1,3 +1,10 @@
+<ng-container *ngFor="let image of images">
+<img
+src="{{ image?.src }}"
+width="100"
+height="80"
+/>
+</ng-container>
 <img
   src="https://media.istockphoto.com/photos/red-abstract-iris-picture-id1302300754?b=1&k=20&m=1302300754&s=170667a&w=0&h=DR27bm9NQWAtrnHNhbpbWphy-hGYqrzP51Jxj2hhtR8="
   width="100"
@@ -18,17 +25,15 @@
   width="100"
   height="80"
 />
+<br />
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-  <div>
-    <input type="number" formControlName="photo" />
-  </div>
+  <div>photo: <input type="number" formControlName="photo" /></div>
 
-  <div>
-    <input type="number" formControlName="section" />
-  </div>
+  <div>section: <input type="number" formControlName="section" /></div>
 
   <button class="button" type="submit">ADD</button>
 </form>
-<app-first [first]="section"></app-first>
-<app-second [second]="secondSection"></app-second>
-<app-third [third]="thirdSecion"></app-third>
+<br />
+<app-first [first]="section"></app-first><br />
+<app-second [second]="secondSection"></app-second><br />
+<app-third [third]="thirdSecion"></app-third><br />
