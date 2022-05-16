@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   images = [
     {
-      id: 1,
+      id: 2,
       src: 'https://media.istockphoto.com/photos/red-abstract-iris-picture-id1302300754?b=1&k=20&m=1302300754&s=170667a&w=0&h=DR27bm9NQWAtrnHNhbpbWphy-hGYqrzP51Jxj2hhtR8=',
     },
     {
