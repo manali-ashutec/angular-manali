@@ -9,5 +9,7 @@ export class FirstComponent implements OnInit {
   @Input() first: any;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.first);
+  }
 }
