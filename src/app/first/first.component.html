@@ -1,8 +1,9 @@
 <section>
   <p>first container</p>
   <ng-container *ngIf="first">
-    <ng-container *ngFor="let user of first">
-      <img src="{{ user?.src }}" width="100" height="80" />
-    </ng-container>
+    <div class="img-wrap" *ngFor="let user of first">
+      <span class="close" (click)="onDelete(user)">&times;</span>
+      <img src="{{ user?.src }}" width="100" height="80" /> &nbsp;
+    </div>
   </ng-container>
 </section>

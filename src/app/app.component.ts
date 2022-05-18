@@ -8,9 +8,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   contactForm;
-  secondSection;
-  thirdSecion;
-  section = [];
+  sectionTwo = [];
+  sectionThree = [];
+  sectionOne = [];
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
@@ -39,16 +39,19 @@ export class AppComponent implements OnInit {
   ];
 
   onSubmit(data): void {
-    console.log(data);
     const findId = this.images.find((data1) => data1.id === data.photo);
-    console.log(findId);
-    if (data.section === 1) {
-      this.section.push(findId);
-      this.images.splice(data.photo, 1);
-    } else if (data.section === 2) {
-      this.secondSection = findId;
-    } else if (data.section === 3) {
-      this.thirdSecion = findId;
+    const findIndex = this.images.findIndex((data1) => data1.id === data.photo);
+    if (data.section === 1 && data.photo < 5) {
+      this.sectionOne.push(this.images[findIndex]);
+      this.images.splice(findIndex, 1);
+    } else if (data.section === 2 && data.photo < 5) {
+      this.sectionTwo.push(findId);
+      this.images.splice(findIndex, 1);
+    } else if (data.section === 3 && data.photo < 5) {
+      this.sectionThree.push(findId);
+      this.images.splice(findIndex, 1);
+    } else if (data.photo > 4) {
+      alert('image not found');
     }
   }
 }
