@@ -54,4 +54,8 @@ export class AppComponent implements OnInit {
       alert('image not found');
     }
   }
+  GetData(event) {
+    console.log('event', event);
+    this.images.push(event);
+  }
 }

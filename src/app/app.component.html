@@ -30,6 +30,6 @@
   <button class="button" type="submit">ADD</button>
 </form>
 <br />
-<app-first [first]="sectionOne"></app-first><br />
+<app-first [first]="sectionOne" (myOutput)="GetData($event)"></app-first><br />
 <app-second [second]="sectionTwo"></app-second><br />
 <app-third [third]="sectionThree"></app-third><br />

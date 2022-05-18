@@ -5,15 +5,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.css'],
 })
-export class FirstComponent implements OnInit {
+export class FirstComponent {
   @Input() first: any;
-  @Output() myOutput: EventEmitter<string> = new EventEmitter();
-  outputMessage: string = 'I am child component.';
+  @Output() myOutput: EventEmitter<any> = new EventEmitter();
+  findIndex: string;
   constructor() {}
 
-  ngOnInit() {}
   onDelete(event) {
-    const findIndex = this.first.findIndex((data) => data.id === event.id);
-    this.first.splice(findIndex, 1);
+    const find = this.first.find((data) => data.id === event.id);
+    this.findIndex = this.first.findIndex((data) => data.id === event.id);
+    console.log(find);
+    this.myOutput.emit(find);
+    this.first.splice(this.findIndex, 1);
   }
 }
