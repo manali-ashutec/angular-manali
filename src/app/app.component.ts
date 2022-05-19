@@ -41,17 +41,20 @@ export class AppComponent implements OnInit {
   onSubmit(data): void {
     const findId = this.images.find((data1) => data1.id === data.photo);
     const findIndex = this.images.findIndex((data1) => data1.id === data.photo);
-    if (data.section === 1 && data.photo < 5) {
-      this.sectionOne.push(this.images[findIndex]);
-      this.images.splice(findIndex, 1);
-    } else if (data.section === 2 && data.photo < 5) {
-      this.sectionTwo.push(findId);
-      this.images.splice(findIndex, 1);
-    } else if (data.section === 3 && data.photo < 5) {
-      this.sectionThree.push(findId);
-      this.images.splice(findIndex, 1);
-    } else if (data.photo > 4) {
-      alert('image not found');
+    console.log(findIndex);
+    if (findIndex >= 0) {
+      if (data.section === 1 && data.photo < 5) {
+        this.sectionOne.push(this.images[findIndex]);
+        this.images.splice(findIndex, 1);
+      } else if (data.section === 2 && data.photo < 5) {
+        this.sectionTwo.push(findId);
+        this.images.splice(findIndex, 1);
+      } else if (data.section === 3 && data.photo < 5) {
+        this.sectionThree.push(findId);
+        this.images.splice(findIndex, 1);
+      } else if (data.photo > 4) {
+        alert('image not found');
+      }
     }
   }
   GetData(event) {
